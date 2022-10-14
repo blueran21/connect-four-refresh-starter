@@ -28,14 +28,10 @@ class ConnectFour {
     Screen.addCommand('a', 'move left', this.cursor.left.bind(this.cursor));
     Screen.addCommand('d', 'move right', this.cursor.right);
 
-    Screen.addCommand('p', 'place a move', this.place);
+    Screen.addCommand('p', 'place a move', this.placeMove.bind(this));
 
     this.cursor.setBackgroundColor();
     Screen.render();
-  }
-
-  place = () => {
-    this.placeMove()
   }
 
   placeMove() {
